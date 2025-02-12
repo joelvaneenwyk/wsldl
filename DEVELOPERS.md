@@ -23,31 +23,34 @@ Usage:
     singlewor:
         Build exe without any manifest/resources
 ```
+
 To cross-compile ARM64 from AMD64 or vice versa, run:
-```cmd
+
+```batch
 set GOARCH=ArchitectureName
 ```
-Architecture names can be:\
-`arm64`\
-`amd64`\
-`arm`\
-`386`
 
+Architecture names can be:
 
-
+- `arm64`
+- `amd64`
+- `arm`
+- `386`
 
 ### MacOS, Linux (cross compile)
 
 Run this command in shell
+
 ```bash
-$ cd src
-$ env GOOS=windows GOARCH=amd64 go build -ldflags "-w -s"
+cd src
+env GOOS=windows GOARCH=amd64 go build -ldflags "-w -s"
 ```
 
 Optionally, to add an icon to the exe, create and link a resource with
+
 ```bash
-$ go get github.com/josephspurrier/goversioninfo/cmd/goversioninfo
-$ export PATH=$PATH:~/go/bin
-$ goversioninfo -icon res/DistroName/icon.ico -o src/DistroName.syso
-$ env GOOS=windows GOARCH=ArchitectureName go build -ldflags "-w -s" -o DistroName.exe
+go get github.com/josephspurrier/goversioninfo/cmd/goversioninfo
+export PATH=$PATH:~/go/bin
+goversioninfo -icon res/DistroName/icon.ico -o src/DistroName.syso
+env GOOS=windows GOARCH=ArchitectureName go build -ldflags "-w -s" -o DistroName.exe
 ```
