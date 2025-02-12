@@ -36,7 +36,7 @@ jobs:
           $version = ${Env:GITHUB_REF}.Replace("refs/tags/","")
           echo "![downloads](https://img.shields.io/github/downloads/yuk7/wsldl/${version}/total?style=flat-square)" > body.txt
       - name: Upload the release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           body_path: body.txt
           files: |
