@@ -1,15 +1,16 @@
 # wsldl
 
-Advanced WSL Distribution Launcher / Installer
-
-![wsldl logo](https://github.com/yuk7/wsldl/assets/29954265/8c8804f7-29a2-43c7-a9ed-c763a2196100)
-
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yuk7/wsldl/ci.yml?style=flat-square)](https://github.com/yuk7/wsldl/actions/workflows/ci.yml)
 [![Github All Releases](https://img.shields.io/github/downloads/yuk7/wsldl/total.svg?style=flat-square)](https://github.com/yuk7/wsldl/releases/latest)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![License](https://img.shields.io/github/license/yuk7/wsldl.svg?style=flat-square)
 
-### [Detailed documentation is here](https://git.io/wsldl-doc)
+Advanced WSL Distribution Launcher / Installer
+
+> [!NOTE]
+> See [here for detailed documentation](https://git.io/wsldl-doc).
+
+![wsldl logo](https://github.com/yuk7/wsldl/assets/29954265/8c8804f7-29a2-43c7-a9ed-c763a2196100)
 
 ## 💻Requirements
 
@@ -29,44 +30,44 @@ If you rename it, you can register with a different name.
 **Note:**
 The filesystem needs to be in the root of the tarball, some rootfs tarballs may need to be repacked.
 
-#### 1. [Download wsldl.exe](https://github.com/yuk7/wsldl/releases/latest)
+### 1. [Download wsldl.exe](https://github.com/yuk7/wsldl/releases/latest)
 
 (wsldl.exe is x86_64, wsldl_arm64.exe is ARM64 build)
 
-#### 2. Rename it for distribution name to register
+### 2. Rename it for distribution name to register
 
 (Ex: Rename to Arch.exe if you want to use "Arch" for the Instance name)
 
-#### 3. Put your install.tar(.gz) in same directory as exe (Installation directory)
+### 3. Put your install.tar(.gz) in same directory as exe (Installation directory)
 
-#### 4. Run exe to install. This process may take a few minutes
+### 4. Run exe to install. This process may take a few minutes
 
 ## 🔧Install with any ext4 vhdx disk images (WSL2 only)
 
-#### 1. [Download wsldl.exe](https://github.com/yuk7/wsldl/releases/latest)
+### 1. [Download wsldl.exe](https://github.com/yuk7/wsldl/releases/latest)
 
 (wsldl.exe is x86_64, wsldl_arm64.exe is ARM64 build)
 
-#### 2. Rename it for distribution name to register
+### 2. Rename it for distribution name to register
 
 (Ex: Rename to Arch.exe if you want to use "Arch" for the Instance name)
 
-#### 3. Put your install.ext4.vhdx(.gz) in same directory as exe (Installation directory)
+### 3. Put your install.ext4.vhdx(.gz) in same directory as exe (Installation directory)
 
-#### 4. Run exe to install. This process may take a few minutes
+### 4. Run exe to install. This process may take a few minutes
 
 ## 🔗Use as a Launcher for already installed distribution
 
-#### 1. [Download wsldl.exe](https://github.com/yuk7/wsldl/releases/latest)
+### 1. [Download wsldl.exe](https://github.com/yuk7/wsldl/releases/latest)
 
 (wsldl.exe is x86_64, wsldl_arm64.exe is ARM64 build)
 
-#### 2. Rename it for registerd instance name
+### 2. Rename it for registerd instance name
 
 Please check the registered instance name of the distribution with `wslconfig /l` command.
 (Ex: If the instance name is "Ubuntu-20.04", rename `wsldl.exe` to `Ubuntu-20.04.exe`)
 
-#### 4. Run exe to Launch instance or configuration
+### 4. Run exe to Launch instance or configuration
 
 For details, please see the help. (`{InstanceName}.exe help`)
 
@@ -74,9 +75,9 @@ Note: You can distribute your distribution including wsldl exe.
 
 ## 📝How-to-Use(for Installed Instance)
 
-#### exe Usage
+### exe Usage
 
-```
+```text
 Usage :
     <no args>
       - Open a new shell with your default settings.
@@ -117,75 +118,74 @@ Usage :
       - Print this usage message.
 ```
 
-#### Just Run exe
+### Just Run exe
 
-```cmd
->{InstanceName}.exe
+```sh
+{InstanceName}.exe
 [root@PC-NAME user]#
 ```
 
-#### Run with command line
+### Run with command line
 
-```cmd
->{InstanceName}.exe run uname -r
+```sh
+{InstanceName}.exe run uname -r
 4.4.0-43-Microsoft
 ```
 
-#### Run with command line with path translation
+### Run with command line with path translation
 
-```cmd
->{InstanceName}.exe runp echo C:\Windows\System32\cmd.exe
+```sh
+{InstanceName}.exe runp echo C:\Windows\System32\cmd.exe
 /mnt/c/Windows/System32/cmd.exe
 ```
 
-#### Change Default User(id command required)
+### Change Default User(id command required)
 
-```cmd
->{InstanceName}.exe config --default-user user
+```sh
+{InstanceName}.exe config --default-user user
 
->{InstanceName}.exe
+{InstanceName}.exe
 [user@PC-NAME dir]$
 ```
 
-#### Set "Windows Terminal" as default terminal
+### Set "Windows Terminal" as default terminal
 
-```cmd
->{InstanceName}.exe config --default-term wt
+```sh
+{InstanceName}.exe config --default-term wt
 ```
 
-#### How to uninstall instance
+### How to uninstall instance
 
-```cmd
->{InstanceName}.exe clean
-
+```sh
+{InstanceName}.exe clean
 ```
 
-#### How-to-backup
+### How-to-backup
 
 export to backup.tar.gz (WSL1 or 2)
 
-```cmd
->{InstanceName}.exe backup --tgz
+```sh
+{InstanceName}.exe backup --tgz
 ```
 
 export to backup.ext4.vhdx.gz  (WSL2 only)
 
-```cmd
->{InstanceName}.exe backup --vhdxgz
+```sh
+{InstanceName}.exe backup --vhdxgz
 ```
 
-#### How-to-import
+### How-to-import
 
 .tar(.gz)  (WSL1 or 2)
 
-```cmd
->{InstanceName}.exe install backup.tar.gz
+```sh
+{InstanceName}.exe install backup.tar.gz
 ```
 
 .ext4.vhdx(.gz)  (WSL2 only)
 
-```cmd
->{InstanceName}.exe install backup.ext4.vhdx.gz
+```sh
+{InstanceName}.exe install backup.ext4.vhdx.gz
 ```
 
 ## 🛠How-to-Build
