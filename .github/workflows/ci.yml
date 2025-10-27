@@ -26,7 +26,7 @@ jobs:
           $Env:GO_BUILD_OPTS = "-ldflags `"-X github.com/yuk7/wsldl/version.version=CI-${short_sha}`""
           .\build.bat all
           Compress-Archive -Path .\out\icons\* -DestinationPath .\out\icons.zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: Build results-Windows
           path: |
@@ -46,7 +46,7 @@ jobs:
           $Env:GOARCH="arm64"
           .\build.bat all
           Compress-Archive -Path .\out\icons\* -DestinationPath .\out\icons.zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: Build results-Windows-ARM64
           path: |
@@ -65,7 +65,7 @@ jobs:
           cd src
           goversioninfo
           env GOOS=windows GOARCH=amd64 go build -ldflags "-X github.com/yuk7/wsldl/version.version=CI-Cross-${GITHUB_SHA:0:7}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: Build results-Linux
           path: |
